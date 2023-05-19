@@ -1,38 +1,244 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
+  
+
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Nav{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 10px;
+align-items: center;
+}
+.Nav div{
+  display: flex;
+  gap: 0rem;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border: 1px solid;
+  /* padding: 2px; */
+  border: 1px blue solid;
+}
+
+.input{
+border: none; 
+  width: 650px;
+  height: 35px;
+  text-align: center;
+  outline: none;
+  
+}
+.searchButton{
+  /* border: 1px solid; */
+ /* height: 32px; */
+ height: 35px;
+ width: 90px;
+  padding: 2px;
+  background-color: blue;
+  color: white;
+ border: none;
+ cursor: pointer;
+ 
+  
+}
+.searchButton:hover{
+  background-color: rgb(70, 70, 247);
+}
+.srchIcon{
+  margin: auto;
+}
+.Nav h2{
+  color: indigo;
+  cursor: pointer;
+}
+
+.btnSign{
+  border-radius: 20px;
+  padding: 5px;
+  height: 30px;
+width: 80px;
+text-align: center;
+background-color: white;
+border: 1px indigo solid;
+color: indigo;
+cursor: pointer;
+transition: background-color 1s;
+}
+.btnSign:hover{
+  background-color: indigo;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.link {
+text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.links{
+/* dis */
+}
+.mainLinks
+{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 10px;
+  font-weight: bold;
+}
+
+ul{
+  
+
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.hidden{
+  display: none;
+}
+
+.sublink{
+  /* list-style-type: none; */
+  text-decoration: none;
+  
+}
+.faUser{
+  display: none;
+}
+@media all  and  (max-width:1080px){
+
+ .Nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* gap: 0.8rem; */
+  padding: 10px;
+/* border: 1px indigo solid;  */
+}
+ .input{
+  width: 145px;
+  height: 10px;
+  font-size: 13px;
+ }
+ .searchButton{
+  
+  width: 26px;
+  background-color: indigo;
+  /* border: 1px indigo solid; */
+border-radius: none; 
+padding: 5px;
+
+}
+ .Nav h2{
+  font-size: 22px;
+
+ }
+ .btnSign{
+  
+  display: none;
+  
+
+ }
+ .faUser{
+  display: block;
+  width: 30px;
+  height: 62px;
+  /* border: 1px solid; */
+color: gray;
+ 
+ }
+.Nav .btnButtons{
+  border: none;
+  /* width: 100px; */
+ }
+ .Nav div{
+  border: 1px indigo solid;
+  height: 30px;
+border-radius: 5px;
+
+}
+.forms{
+  border: 1px solid;
+}
+.sideBar{
+  /* border: 1px solid; */
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 70vw;
+  position: absolute;
+/* gap: 5rem; */
+justify-content: space-between;
+align-items: center;
+padding: 10px;
+background-color: rgb(253, 250, 250);
+/* Background color */
+/* box-shadow: 0 2px 4px white; */
+}
+.sideBar button{
+width:110px;
+height: 40px;
+border-radius: 20px;
+padding: 5px;
+border: 1px blue solid;
+/* margin: auto; */
+/* margin: auto; */
+font-weight: bold;
+
+}
+
+.sideBar .mainLinks{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+align-items: center;
+}
+.btnBell{
+  background-color: white;
+  border-radius: 0px;
+  width: 500px;
+  
+}
+.notifyButton{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  
+}
+.mainButton{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  border-bottom: 1px white solid;
+  padding: 2px;
+}
+.blurred{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* gap: 0.8rem; */
+  padding: 10px;
+  /* filter: blur(0.8px); */
+
+  background-color:rgb(255, 252, 252);
+
+}
+
+.sideBar .btnCreate{
+  background-color: white;
+  color: blue;
+  height: 40px;
+  
+  /* word-wrap:break-word; */
+}
+.btnSignin{
+  background-color: blue;
+  color: white;
+}
 }
