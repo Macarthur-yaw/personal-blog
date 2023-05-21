@@ -1,49 +1,40 @@
 // import logo from './logo.svg';
-import Navbar from './Components/Navbar';
 import './App.css';
-import { Link } from 'react-router-dom';
-import { Routes,Route } from "react-router-dom";
-
-import Home from './Components/Home';
-import Business from './Components/Business';
-import Entertainment from './Components/Entertainment';
-import International from './Components/International';
-import Body from './Components/Body';
-import Signin from './Components/Signin';
-import { useState } from 'react';
+import Footer from './Components/Footer';
+import Navbar from './Components/Navbar';
+import { Route,Routes } from 'react-router-dom';
+import Home from "./Pages/Home";
+import Entertainment from "./Pages/Entertainment";
+import Business from "./Pages/Business";
+import Political from "./Pages/Political";
+import International from "./Pages/International";
+import Signin from "./Components/Signin";
+import Dashboard from './Dashboard/Dashboard';
+import Posts from './Dashboard/Posts';
+import HomeDashboard from "./Dashboard/HomeDashboard";
 
 function App() {
-const[bg,setBg]=useState(false);
-
-const handleDatas=(data)=>{
-setBg(data);
-}
-
-
   return (
     <>
 
  <div className="App">
-       <Navbar  handleData={handleDatas} />
-         <div className='links'>
-     
-</div>
+  
+  <Navbar/>
+ 
 
 <Routes>
-  
-    
-<Route path='/Home' element={<Home/>}>
-  <Route index element={<Body/>} />
-<Route path="Business" element={<Business />}  />
-<Route path="Entertainment" element={<Entertainment />} />
-   
-</Route>
-
-<Route path='/International' element={<International/>}/>
-<Route path="/sign" element={<Signin/>}/>  
-
+  <Route path="Home" element={<Home/>}/>
+  <Route path="Business" element={<Business/>}/>
+  <Route path="Entertainment" element={<Entertainment/>}/>
+  <Route path="Political" element={<Political/>}/>
+  <Route path="International" element={<International/>}/>
+<Route path="Sign" element={<Signin/>}/>
+<Route path="Dashboard" element={<Dashboard/>}>
+<Route path="/Dashboard/Home" element={<HomeDashboard/>}/>
+  <Route path="/Dashboard/Post" element={<Posts/>}/>
+  </Route>
 </Routes>
-  
+<Footer/>
     </div>
     </>
     );

@@ -1,10 +1,6 @@
 const Business = () => {
     return ( 
-        <div>Business
-
-
-            <h1>Businesssssss</h1>
-        </div>
+        <div>Business</div>
      );
 }
  

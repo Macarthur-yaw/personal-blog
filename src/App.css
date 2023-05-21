@@ -1,244 +1,267 @@
 *{
   box-sizing: border-box;
-  
-
   margin: 0;
   padding: 0;
 }
-
 .Nav{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 10px;
-align-items: center;
+  font-size: 30px;
+  align-items:center;
+border: 1px solid;
 }
-.Nav div{
-  display: flex;
-  gap: 0rem;
-  align-items: center;
-  border: 1px solid;
-  /* padding: 2px; */
+.btnSignin{
+  border-radius: 10px;
+  /* padding: 10px; */
+  color: blue;
   border: 1px blue solid;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.4s;
+  height: 30px;
+  font-weight: bold;
+  width: 80px;
 }
-
-.input{
-border: none; 
-  width: 650px;
-  height: 35px;
-  text-align: center;
-  outline: none;
-  
-}
-.searchButton{
-  /* border: 1px solid; */
- /* height: 32px; */
- height: 35px;
- width: 90px;
-  padding: 2px;
+.btnSignin:hover{
   background-color: blue;
   color: white;
- border: none;
- cursor: pointer;
- 
-  
 }
-.searchButton:hover{
-  background-color: rgb(70, 70, 247);
-}
-.srchIcon{
-  margin: auto;
-}
-.Nav h2{
-  color: indigo;
-  cursor: pointer;
-}
-
-.btnSign{
-  border-radius: 20px;
-  padding: 5px;
-  height: 30px;
-width: 80px;
+.searchBar{
+width: 420px;
+height: 35px;
+border-top-left-radius: 10px;
+border-bottom-left-radius: 10px;
+/* border-radius: 10px; */
 text-align: center;
-background-color: white;
+border-right: none;
 border: 1px indigo solid;
-color: indigo;
-cursor: pointer;
-transition: background-color 1s;
+/* border-top-right-radius: none; */ 
+outline: none;
 }
-.btnSign:hover{
+.btnSearch{
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 1px indigo solid;
+  width: 60px;
+  height: 35px;
   background-color: indigo;
   color: white;
 }
-.link {
-text-decoration: none;
+.Nav h3{
+  color: indigo;
 }
-
-.links{
-/* dis */
-}
-.mainLinks
-{
+.headerIcon{
   display: flex;
-  flex-direction: row;
-  gap: 1rem;
+  align-items: center;
+  gap: 0.2rem;
+}
+.headerIcon h4{
+transform: rotate(10deg);
+}
+.subNav{
+  display: block;
+}
+.subNav ul{
+  
+  display: flex;
+  list-style-type: none;
+  gap: 2rem;
   padding: 10px;
   font-weight: bold;
 }
-
-ul{
-  
-
-  display: flex;
-  list-style-type: none;
-  justify-content: space-around;
-  flex-direction: row;
+.Footer{
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  /* border: 1px solid; */
+  width: 100%;
+  padding: 10px;
+ 
 }
-
+.btnUser{
+  display: none;
+}
 .hidden{
   display: none;
 }
-
-.sublink{
-  /* list-style-type: none; */
-  text-decoration: none;
-  
-}
-.faUser{
-  display: none;
-}
-@media all  and  (max-width:1080px){
-
- .Nav {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  /* gap: 0.8rem; */
-  padding: 10px;
-/* border: 1px indigo solid;  */
-}
- .input{
-  width: 145px;
-  height: 10px;
-  font-size: 13px;
- }
- .searchButton{
-  
-  width: 26px;
-  background-color: indigo;
-  /* border: 1px indigo solid; */
-border-radius: none; 
-padding: 5px;
-
-}
- .Nav h2{
-  font-size: 22px;
-
- }
- .btnSign{
-  
-  display: none;
-  
-
- }
- .faUser{
-  display: block;
-  width: 30px;
-  height: 62px;
-  /* border: 1px solid; */
-color: gray;
- 
- }
-.Nav .btnButtons{
-  border: none;
-  /* width: 100px; */
- }
- .Nav div{
-  border: 1px indigo solid;
-  height: 30px;
-border-radius: 5px;
-
-}
 .forms{
-  border: 1px solid;
-}
-.sideBar{
   /* border: 1px solid; */
-  display: flex;
-  flex-direction: column;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: 70vw;
-  position: absolute;
-/* gap: 5rem; */
-justify-content: space-between;
-align-items: center;
-padding: 10px;
-background-color: rgb(253, 250, 250);
-/* Background color */
-/* box-shadow: 0 2px 4px white; */
-}
-.sideBar button{
-width:110px;
-height: 40px;
-border-radius: 20px;
-padding: 5px;
-border: 1px blue solid;
-/* margin: auto; */
-/* margin: auto; */
-font-weight: bold;
-
-}
-
-.sideBar .mainLinks{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-align-items: center;
-}
-.btnBell{
-  background-color: white;
-  border-radius: 0px;
-  width: 500px;
-  
-}
-.notifyButton{
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  
-}
-.mainButton{
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  border-bottom: 1px white solid;
-  padding: 2px;
-}
-.blurred{
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  /* gap: 0.8rem; */
+  /* margin: auto; */
+  margin-bottom: 0;
+  text-align: center;
+  height: 100%;
   padding: 10px;
-  /* filter: blur(0.8px); */
-
-  background-color:rgb(255, 252, 252);
-
+  text-decoration:line ;
+  display: flex;
+  flex-direction: column;
 }
-
-.sideBar .btnCreate{
-  background-color: white;
-  color: blue;
-  height: 40px;
-  
-  /* word-wrap:break-word; */
+.formsInfo{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 20px;
 }
-.btnSignin{
-  background-color: blue;
+.forms h3{
+  border: 1px solid;
+  width: 150px;
+  margin: auto;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: indigo;
   color: white;
 }
+.btnGoogle{
+  width: 220px;
+  margin: auto;
+/* display: none; */
+padding: 10px;
+background-color: white;
+color: indigo;
+border: 1px indigo solid;
+/* font-size: 16px; */
+}
+.input{
+  width: 100%;
+  height: 45px;
+  text-align: left;
+  padding: 5px;
+border-radius: 5px;
+border: 1.3px indigo solid;
+}
+.btnSubmit{
+  background-color: indigo;
+  color: white;
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  width: 100%;
+  height: 40px;
+}
+.mainDiv{
+border: 1px solid;
+width: 100%;
+height: 30vh;
+}
+.sub{
+  background-color: indigo;
+  border: 1px indigo solid;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+  align-items: center;
+  height: 100vh;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  color: white;
+  gap: 5rem;
+  
+/* padding-left: 20px; */
+}
+
+.links{
+  display: flex;
+  flex-direction: column;
+  width: 190px;
+  /* border: 1px solid; */
+  height: 100vh;
+  text-align: left;
+  font-size: 16px;
+  gap: 3rem;
+
+  /* padding-bottom: 20px; */
+  /* padding: 10px; */
+  background-color: indigo;
+  
+}
+.link:hover{
+  background-color: #1e014d;
+}
+.linnk:is{
+  background-color: #1e014d;
+}
+.link{
+  text-decoration: none;
+  width: 100%;
+  /* border: 1px solid; */
+  color: white;
+padding-left: 10px;
+padding: 10px;
+transition: background-color 1s;
+display: flex;
+gap: 0.5rem;
+align-items: center;
+}
+.contents{
+  display: flex;
+  gap: 1rem;
+  /* padding: 10x; */
+}
+.linkLogout{
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  
+  
+  
+}
+.linkLogout button{
+  width:150px;
+  height: 30px;
+  border: 1px white solid;
+  background-color: transparent;
+  color: white;
+  border-radius: 10px;
+}
+@media all and (max-width:700px){
+  .Nav{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-between;
+    gap: 0rem;
+  padding-top: 10px;
+  /* padding-bottom: 10px; */
+  padding-right: 2px;
+  padding-left: 2px;
+  }
+  .searchBar{
+    width: 180px;
+    height: 40px;
+    border-top-left-radius: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  }
+  .btnSearch{
+    height: 40px;
+    width: 45px;
+  }
+  .btnUser
+  {
+    display: block;
+    background-color: transparent;
+    font-size: 30px;
+    color: indigo;
+  }
+  .btnSignin{
+   
+    display: none;
+  }
+  .Nav h3{
+    font-size: 20px;
+  }
+  .subNav ul{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    font-size: 15px;
+ 
+  }
+  .subNav li{
+    text-align: center;
+    /* padding: ; */
+  }
 }

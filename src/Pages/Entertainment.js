@@ -1,8 +1,7 @@
 const Entertainment = () => {
     return ( 
-        <div>Hey
-
-            Entertainment
+        <div>
+            Entertainments
         </div>
      );
 }
