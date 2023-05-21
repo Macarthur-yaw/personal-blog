@@ -12,6 +12,7 @@ import Signin from "./Components/Signin";
 import Dashboard from './Dashboard/Dashboard';
 import Posts from './Dashboard/Posts';
 import HomeDashboard from "./Dashboard/HomeDashboard";
+import AdminSign from "./Components/AdminSign";
 
 function App() {
   return (
@@ -28,11 +29,15 @@ function App() {
   <Route path="Entertainment" element={<Entertainment/>}/>
   <Route path="Political" element={<Political/>}/>
   <Route path="International" element={<International/>}/>
-<Route path="Sign" element={<Signin/>}/>
+<Route path="Sign" element={<Signin/>}>
+
+</Route>
+
 <Route path="Dashboard" element={<Dashboard/>}>
 <Route path="/Dashboard/Home" element={<HomeDashboard/>}/>
   <Route path="/Dashboard/Post" element={<Posts/>}/>
   </Route>
+  <Route path="Admin" element={<AdminSign/>}/>
 </Routes>
 <Footer/>
     </div>

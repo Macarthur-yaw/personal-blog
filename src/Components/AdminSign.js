@@ -1,8 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 
-const Signin = () => {
+
+const AdminSign = () => {
     const[name,setName]=useState("");
     const[password,setPassword]=useState("");
     const[error,setError]=useState(false);
@@ -11,8 +11,12 @@ const[check,setCheck]=useState(false);
 const[disables,setDisables]=useState(false);
 const navigate=useNavigate();
 
+
+
 const handleSubmit=(e)=>{
 e.preventDefault();
+
+
 if(name.length<1 ){
     setError(true);
     }
@@ -24,6 +28,10 @@ if(name.length<1 ){
     const handleName=(e)=>{
 setName(e.target.value);
 setError(false);
+const mydata={
+    user_name:name,
+    pass_word:password
+}
 }
     const handlePassword=(e)=>{
         setPassword(e.target.value);
@@ -48,30 +56,23 @@ navigate("/Dashboard");
 // console.log(check);        
             
     }
-    const adminPage=()=>{
-        navigate("/Admin");
-    }
-//    console.log(check);
+
     return ( 
+
         <div className="forms">
-<form onSubmit={handleSubmit}>
+            
+            <form onSubmit={handleSubmit}>
 <div className="formsInfo">
     <h3 >infoGh!</h3>
 
-<h4 style={{fontWeight:"bold",color:"indigo"}}>Subscribe to our newsLetter</h4>
- {/* Subscribe to our newsLetter */}
+<h4 style={{fontWeight:"bold",color:"indigo"}}>Publish credible news on our website</h4>
 
- <button className="btnGoogle">
-
-    Sign in with Google
- </button>
 </div>
 <br/>
 
-<h4 style={{color:"gray"}}>OR</h4>
 
 <h4 style={{textAlign:"left",fontSize:"16px"}}>Username</h4>
-    <input type="text" className="input" placeholder="Username" value={name} onChange={handleName}/>
+    <input type="text" className="input" placeholder="Username" name="user" value={name} onChange={handleName}/>
     <br>
     </br>
     {
@@ -82,8 +83,8 @@ navigate("/Dashboard");
             <br></br>This field can't be empty</div>)
     }
     <br/>
-    <h4 style={{textAlign:"left"}}>Email</h4>
-    <input type="email" className="input" value={password} placeholder="Password" onChange={handlePassword}/>
+    <h4 style={{textAlign:"left"}}>Password</h4>
+    <input type="email" className="input" value={password} placeholder="Password" name="password" onChange={handlePassword}/>
     <br>
     </br>
 {perr && (<div style={{textAlign:"left",color:"red"}}>
@@ -97,7 +98,7 @@ navigate("/Dashboard");
     disables ? (
 <div>
 <br/>
-    <button className="btnSubmit" onClick={submitForm}>Subscribe</button>
+    <button className="btnSubmit" onClick={submitForm}>Sign in</button>
 
 </div>
    
@@ -107,7 +108,7 @@ navigate("/Dashboard");
 <br/>
     <button disabled 
     style={{backgroundColor:"#A6ACCD"}}
-    className="btnSubmit" onClick={submitForm}>Subscribe</button>
+    className="btnSubmit" onClick={submitForm}>Sign in</button>
 
 </div>
 
@@ -116,12 +117,8 @@ navigate("/Dashboard");
 }
 
 </form>
-&nbsp;
-<h5>You can publish News <button onClick={adminPage}>Publish</button>
-</h5>
-
         </div>
      );
 }
  
-export default Signin;
+export default AdminSign;
