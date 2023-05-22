@@ -25,15 +25,15 @@ const Dashboard = () => {
 
 
  <Link to="/Dashboard/Post" className="link">
- <FontAwesomeIcon icon={faNewspaper}/> Articles
-
- </Link>
-
- <Link to="/Dashboard/Post" className="link">
  <FontAwesomeIcon icon={faNewspaper}/> Posts
+
  </Link>
 
- <Link to="/Dashboard/Post" className="link">
+ <Link to="/Dashboard/Articles" className="link">
+ <FontAwesomeIcon icon={faNewspaper}/> Articles
+ </Link>
+
+ <Link to="/Dashboard/User" className="link">
  <FontAwesomeIcon icon={faPlusSquare}/> Add new User
  </Link>
 

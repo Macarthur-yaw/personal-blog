@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import AdminSign from "./AdminSign";
+// import { response } from "express";
+// import { sdCard } from "fontawesome";
+
 
 const Signin = () => {
     const[name,setName]=useState("");
@@ -11,14 +16,35 @@ const[check,setCheck]=useState(false);
 const[disables,setDisables]=useState(false);
 const navigate=useNavigate();
 
+const adminSignin=()=>{
+    navigate("/Admin");
+}
+
 const handleSubmit=(e)=>{
-e.preventDefault();
-if(name.length<1 ){
+    e.preventDefault();
+if(name.length<1  ){
     setError(true);
-    }
-    if( password.length<1){
-        setPerr(true);
-    }
+   
+    
+
+
+} else if(password.length<1){
+    setPerr(true);
+}
+else{
+    const url="http://localhost/Posts/Subscribers.php";
+    let sData=new FormData();
+    sData.append('name',name);
+    sData.append('email',password);
+    
+    
+    axios.post(url,sData).then((response)=>
+    console.log(response.data)).catch((error)=>console.log(error));
+    
+}
+    // if( password.length<1){
+    //     setPerr(true);
+    // }
 
     }
     const handleName=(e)=>{
@@ -41,16 +67,7 @@ if(check){
 }
     }
 
-    function submitForm(){
-        console.log(name);
-        console.log(password);
-navigate("/Dashboard");
-// console.log(check);        
-            
-    }
-    const adminPage=()=>{
-        navigate("/Admin");
-    }
+    
 //    console.log(check);
     return ( 
         <div className="forms">
@@ -71,7 +88,7 @@ navigate("/Dashboard");
 <h4 style={{color:"gray"}}>OR</h4>
 
 <h4 style={{textAlign:"left",fontSize:"16px"}}>Username</h4>
-    <input type="text" className="input" placeholder="Username" value={name} onChange={handleName}/>
+    <input type="text" name="user" className="input" placeholder="Username" value={name} onChange={handleName}/>
     <br>
     </br>
     {
@@ -83,7 +100,7 @@ navigate("/Dashboard");
     }
     <br/>
     <h4 style={{textAlign:"left"}}>Email</h4>
-    <input type="email" className="input" value={password} placeholder="Password" onChange={handlePassword}/>
+    <input type="email" className="input" value={password} placeholder="Email" name="email" onChange={handlePassword}/>
     <br>
     </br>
 {perr && (<div style={{textAlign:"left",color:"red"}}>
@@ -97,7 +114,7 @@ navigate("/Dashboard");
     disables ? (
 <div>
 <br/>
-    <button className="btnSubmit" onClick={submitForm}>Subscribe</button>
+    <button className="btnSubmit">Subscribe</button>
 
 </div>
    
@@ -107,7 +124,7 @@ navigate("/Dashboard");
 <br/>
     <button disabled 
     style={{backgroundColor:"#A6ACCD"}}
-    className="btnSubmit" onClick={submitForm}>Subscribe</button>
+    className="btnSubmit">Subscribe</button>
 
 </div>
 
@@ -117,7 +134,7 @@ navigate("/Dashboard");
 
 </form>
 &nbsp;
-<h5>You can publish News <button onClick={adminPage}>Publish</button>
+<h5>You can publish News <button onClick={adminSignin}>Publish</button>
 </h5>
 
         </div>

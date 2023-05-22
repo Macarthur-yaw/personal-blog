@@ -13,6 +13,8 @@ import Dashboard from './Dashboard/Dashboard';
 import Posts from './Dashboard/Posts';
 import HomeDashboard from "./Dashboard/HomeDashboard";
 import AdminSign from "./Components/AdminSign";
+import Articles from './Dashboard/Articles';
+import User from './Dashboard/User';
 
 function App() {
   return (
@@ -36,6 +38,8 @@ function App() {
 <Route path="Dashboard" element={<Dashboard/>}>
 <Route path="/Dashboard/Home" element={<HomeDashboard/>}/>
   <Route path="/Dashboard/Post" element={<Posts/>}/>
+ <Route path="/Dashboard/Articles" element={<Articles/>}/>
+ <Route path="/Dashboard/User" element={<User/>}/>
   </Route>
   <Route path="Admin" element={<AdminSign/>}/>
 </Routes>
