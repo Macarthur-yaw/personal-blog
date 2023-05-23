@@ -1,27 +1,41 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet,useNavigate } from "react-router-dom";
 import Posts from "./Posts";
+
 import { faDashboard,faNewspaper,faPlusSquare} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Dashboard = () => {
+const navigate=useNavigate();
+
+const logOut=()=>{
+navigate("/");
+}
     return ( 
 
         <div className="contents">
 
-            
-<div className="sub">
 
+
+           <div className="mainNav">
+
+          
+
+<div className="sub">
 <div  className="User">
 
-<h2>infoGh</h2>
-</div>
+<FontAwesomeIcon icon={faUserCircle} style={{fontSize:"35px"}}/>
+
+{/* <h2 style={{fontFamily:"Bodoni"}}>InfoGh</h2> */}
+  </div> 
 
 <div className="links">
-<Link to="/Dashboard/Home" className="link">
+ <Link to="/Dashboard/Home" className="link">
 
 
     <FontAwesomeIcon icon={faDashboard}/>  Dashboard
-</Link>
+ </Link>
 
 
  <Link to="/Dashboard/Post" className="link">
@@ -38,23 +52,28 @@ const Dashboard = () => {
  </Link>
 
 
-</div>
- <div style={{paddingBottom:"20px"}}>
-
-    <Link to="/Dashboard/Post" className="linkLogout">
-    <button>
-    Logout
-    </button>
+    <Link to="/Dashboard/Post" onClick={logOut} className="link">
+    
+   <FontAwesomeIcon icon={faSignOutAlt}/>   Logout 
+    
     
        
     </Link>
- </div>
 
 </div>
 
 
+</div> 
 
-         <Outlet/>
+
+           </div>
+           <div className="body">
+
+<Outlet/>
+
+</div>
+
+
 
 
 

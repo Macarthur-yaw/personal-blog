@@ -42,6 +42,7 @@ function App() {
  <Route path="/Dashboard/User" element={<User/>}/>
   </Route>
   <Route path="Admin" element={<AdminSign/>}/>
+  <Route path="*" element={<p>404!</p>}/>
 </Routes>
 <Footer/>
     </div>

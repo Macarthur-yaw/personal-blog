@@ -14,6 +14,8 @@ const Signin = () => {
 const[perr,setPerr]=useState(false);
 const[check,setCheck]=useState(false);    
 const[disables,setDisables]=useState(false);
+const[congrat,setCongrat]=useState(false);
+
 const navigate=useNavigate();
 
 const adminSignin=()=>{
@@ -39,7 +41,11 @@ else{
     
     
     axios.post(url,sData).then((response)=>
-    console.log(response.data)).catch((error)=>console.log(error));
+    {console.log(response.data)
+ setCongrat(true) ;  
+ setName("");
+ setPassword("");
+}).catch((error)=>console.log(error));
     
 }
     // if( password.length<1){
@@ -50,10 +56,12 @@ else{
     const handleName=(e)=>{
 setName(e.target.value);
 setError(false);
+setCongrat(false);
 }
     const handlePassword=(e)=>{
         setPassword(e.target.value);
         setPerr(false);
+   setCongrat(false);
     }
     const handleSelect=(e)=>{
 
@@ -84,7 +92,7 @@ if(check){
  </button>
 </div>
 <br/>
-
+{congrat && (<div>You have subscribed</div>)}
 <h4 style={{color:"gray"}}>OR</h4>
 
 <h4 style={{textAlign:"left",fontSize:"16px"}}>Username</h4>
