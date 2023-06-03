@@ -42,71 +42,56 @@ console.log(info);
    <div>
 {loading && "Loading"}
 
-<div>
-<h3 style={{fontWeight:"bold"}}>
- 
-    Dashboard
-    </h3>
-    <br/>
-</div>
+
     
 
-<div className="DashBoxes">
-<div className="numUsers">
+<div className="flex flex-row gap-2 p-4">
+<div className="flex flex-row border-2 p-2 rounded p-4 items-center gap-2">
     
-    <div>
-    <FontAwesomeIcon style={{fontSize:"35px",color:"indigo"}} icon={faNewspaper}/>
+    
+    <FontAwesomeIcon className="text-5xl" icon={faNewspaper}/>
  
-    </div>
-
-    <div>
+    <div className="flex flex-col">
         
     Number of Articles
     {display && 
-  (<h3>{info.num_filled_fields}</h3>) }
+  (<h3 className="text-xl">{info.num_filled_fields}</h3>) }
     </div>
-  
     </div>
    
-   <div className="numUsers">
-   <div>
-    <FontAwesomeIcon style={{fontSize:"35px",color:"indigo"}} icon={faBook}/>
+   <div className="flex flex-row border-2 rounded p-4 p-2 items-center gap-2">
+   
+    <FontAwesomeIcon className="text-5xl"  icon={faBook}/>
  
-    </div>
-    <div>
+ <div  className="flex flex-col">
     Articles Today
-    <br>
-    </br>
-    <h1>
+    <h1 className="text-xl">
 {info.todays_Articles}
 </h1> 
     </div>
    </div>
 
-   <div className="numUsers">
-   <div>
-    <FontAwesomeIcon style={{fontSize:"35px",color:"indigo"}} icon={faUser}/>
+   <div className="flex flex-row border-2 p-2 rounded p-4 items-center gap-2">
+   
+    <FontAwesomeIcon className="text-5xl"  icon={faUser}/>
  
-    </div>
-    <div>
+    <div className="flex flex-col">
     Number of Subscribers
-    <br>
-    </br>
-    <h1>
+    <h1 className="text-xl">
 {info.num_subscribers}
 </h1>
     </div>
 
    </div>
-   <div className="numUsers">
-   <div>
-    <FontAwesomeIcon style={{fontSize:"35px",color:"indigo"}} icon={faBook}/>
+   <div className="flex flex-row border-2 rounded p-4 p-2 items-center gap-2">
+   
+    <FontAwesomeIcon  icon={faBook} className="text-5xl"/>
  
-    </div>
-<div>
+   
+<div className="flex flex-col">
 Number of Users
 
-<h1>
+<h1 className="text-xl">
 {info.admin}
 </h1>
 </div>

@@ -1,87 +1,22 @@
-import { Link, Outlet,useNavigate } from "react-router-dom";
-import Posts from "./Posts";
-
-import { faDashboard,faNewspaper,faPlusSquare} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
-import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import { useEffect } from "react";
+import useAuth from "../Pages/useAuth";
+import { useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import HomeDash from "./HomeDash";
 
 const Dashboard = () => {
-const navigate=useNavigate();
+    const auth=useAuth();
+    const navigate=useNavigate();
 
-const logOut=()=>{
-navigate("/");
-}
-    return ( 
-
-        <div className="contents">
-
-
-
-           <div className="mainNav">
-
-          
-
-<div className="sub">
-<div  className="User">
-
-<FontAwesomeIcon icon={faUserCircle} style={{fontSize:"35px"}}/>
-
-{/* <h2 style={{fontFamily:"Bodoni"}}>InfoGh</h2> */}
-  </div> 
-
-<div className="links">
- <Link to="/Dashboard/Home" className="link">
-
-
-    <FontAwesomeIcon icon={faDashboard}/>  Dashboard
- </Link>
-
-
- <Link to="/Dashboard/Post" className="link">
- <FontAwesomeIcon icon={faNewspaper}/> Posts
-
- </Link>
-
- <Link to="/Dashboard/Articles" className="link">
- <FontAwesomeIcon icon={faNewspaper}/> Articles
- </Link>
-
- <Link to="/Dashboard/User" className="link">
- <FontAwesomeIcon icon={faPlusSquare}/> Add new User
- </Link>
-
-
-    <Link to="/Dashboard/Post" onClick={logOut} className="link">
+    useEffect(()=>{
+        if(!auth){
+            navigate("/Form");
+            console.log("name is not set");
+        }
+      
+    })
     
-   <FontAwesomeIcon icon={faSignOutAlt}/>   Logout 
-    
-    
-       
-    </Link>
-
-</div>
-
-
-</div> 
-
-
-           </div>
-           <div className="body">
-
-<Outlet/>
-
-</div>
-
-
-
-
-
-        </div>
-
- 
-
-     );
+    return <HomeDash/>
 }
  
 export default Dashboard;

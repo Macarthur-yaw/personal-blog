@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import axios from "axios";
+import { useReducer } from "react";
 
 const Posts = () => {
   const [title, setTitle] = useState("");
@@ -31,68 +32,72 @@ const[congrat,setCongrat]=useState(false);
 
   return (
     <div>
-      <form onSubmit={handleSubmit} encType="multipart/form-data" className="articles-form">
+      <form onSubmit={handleSubmit} encType="multipart/form-data" className="p-2  flex flex-col gap-2">
         <div>
-          <h4>Title</h4>
+          
           <input
             type="text"
-            className="title-input"
+            className="border-2 text-center w-64 rounded p-2"
             placeholder="What's the Title"
             onChange={(e) => setTitle(e.target.value)}
             name="title"
           />
         </div>
         <div>
-          <h4>Content</h4>
+          {/* <h4>Content</h4> */}
           <textarea
             onChange={(e) => setContent(e.target.value)}
             placeholder="Content"
             name="content"
-            className="content-input"
+            className="border-2 w-96  h-64 rounded p-2"
           ></textarea>
         </div>
         <div>
-          <h4>Source</h4>
+          {/* <h4>Source</h4> */}
           <input
             type="text"
             onChange={(e) => setSource(e.target.value)}
             placeholder="Source of News"
-            className="source-input"
+            className="border-2 text-center w-64 p-2 rounded"
             name="source"
           />
         </div>
         <div>
-          <h4>Time of Publishing</h4>
+          {/* <h4>Time of Publishing</h4> */}
           <input
             type="date"
             onChange={(e) => setDate(e.target.value)}
-            className="date-input"
+            className="border-2"
             placeholder="Time of Publishing"
             name="date"
           />
         </div>
         <div>
-          <h4>Image to be attached</h4>
+          {/* <h4>Image to be attached</h4> */}
           <input
             type="file"
             onChange={(e) => setImgPath(e.target.files[0])}
-            className="image-input"
+            className="border-2 w-auto"
             name="ImgPath"
           />
         </div>
         <br />
-        <button className="btn-post">Post</button>
+        <button className="border-2 w-48 rounded border-slate-700">Post</button>
       </form>
    
       {congrat && (
-        <div className="dialogue-box">
-          <div className="dialogue-content">
-            <h3>Success!</h3>
-            <p>You have successfully added this.</p>
-            <button className="dialogue-close" onClick={() => setCongrat(false)}>Close</button>
-          </div>
-        </div>
-      )}
+  <div className="fixed inset-0 flex items-center justify-center">
+    <div className="bg-black bg-opacity-50 backdrop-filter backdrop-blur-md absolute inset-0"></div>
+    <div className="bg-white p-6 rounded shadow-lg relative">
+      <h3 className="text-lg font-semibold mb-2">Success!</h3>
+      <p>You have successfully added this.</p>
+      <button className="bg-gray-500 text-white px-4 py-2 rounded mt-4" onClick={() => setCongrat(false)}>Close</button>
+    </div>
+  </div>
+)}
+
+
+
    </div>
   );
 };

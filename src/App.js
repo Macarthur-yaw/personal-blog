@@ -1,53 +1,43 @@
-// import logo from './logo.svg';
 import './App.css';
-import Footer from './Components/Footer';
-import Navbar from './Components/Navbar';
-import { Route,Routes } from 'react-router-dom';
-import Home from "./Pages/Home";
-import Entertainment from "./Pages/Entertainment";
-import Business from "./Pages/Business";
-import Political from "./Pages/Political";
-import International from "./Pages/International";
-import Signin from "./Components/Signin";
-import Dashboard from './Dashboard/Dashboard';
-import Posts from './Dashboard/Posts';
-import HomeDashboard from "./Dashboard/HomeDashboard";
-import AdminSign from "./Components/AdminSign";
-import Articles from './Dashboard/Articles';
-import User from './Dashboard/User';
+import { Routes, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Home from './Pages/Home';
+import Form from './Pages/Form';
+import Dashboard from "./Dashboard/Dashboard";
+import DashHome from "./Dashboard/HomeDash";
+import Post from "./Dashboard/Post";
+import Details from "./Dashboard/Details";
+import Homes from "./Dashboard/Home";
+import Display from './Display';
+import { useEffect } from 'react';
+import { useState } from 'react';
+// import DataContext from './DataContext';
+import { DataContextProvider } from './DataContext';
 
 function App() {
+  // const [error, setError] = useState(false);
+  // const [details, setDetails] = useState(false);
+
   return (
     <>
-
- <div className="App">
-  
-  <Navbar/>
- 
-
-<Routes>
-  <Route path="Home" element={<Home/>}/>
-  <Route path="Business" element={<Business/>}/>
-  <Route path="Entertainment" element={<Entertainment/>}/>
-  <Route path="Political" element={<Political/>}/>
-  <Route path="International" element={<International/>}/>
-<Route path="Sign" element={<Signin/>}>
-
-</Route>
-
-<Route path="Dashboard" element={<Dashboard/>}>
-<Route path="/Dashboard/Home" element={<HomeDashboard/>}/>
-  <Route path="/Dashboard/Post" element={<Posts/>}/>
- <Route path="/Dashboard/Articles" element={<Articles/>}/>
- <Route path="/Dashboard/User" element={<User/>}/>
-  </Route>
-  <Route path="Admin" element={<AdminSign/>}/>
-  <Route path="*" element={<p>404!</p>}/>
-</Routes>
-<Footer/>
-    </div>
+      <div className="App">
+        <DataContextProvider>
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path='Form' element={<Form />} />
+            <Route path='Dashboard' element={<Dashboard />}>
+              <Route path='Details' element={<Details />} />
+              <Route path='Post' element={<Post />} />
+              <Route index element={<DashHome />} />
+              <Route path='Home' element={<Homes />} />
+            </Route>
+            <Route path='Display/:id' element={<Display />} />
+            <Route path='*' element={<p>404 Error!</p>} />
+          </Routes>
+        </DataContextProvider>
+      </div>
     </>
-    );
+  );
 }
 
 export default App;

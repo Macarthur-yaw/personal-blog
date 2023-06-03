@@ -1,19 +1,17 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
     return ( 
-        <div className="Footer" >
- 
- <div style={{textAlign:"center"}}>
-
- Terms and Privacy 
+        <div className="border-t-2 shadow-sm  text-center flex flex-row justify-evenly p-4" >
+            &copy;MacArthur Kevin 
 &nbsp;
-About 
+<Link to="">Terms and Privacy</Link>
+      &nbsp;
+            <Link to="">About</Link>
+            &nbsp;
+            <Link to="">Contact</Link>
 
-&copy;
-2023
-
- </div>
- 
-
+            <Link to="Form">Publish</Link>
         </div>
      );
 }
